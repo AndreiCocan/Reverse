@@ -163,7 +163,7 @@ Dans cette fonction, vous devriez pouvoir identifier une fonction qui vous inté
 Vous n'aurez plus qu'à coder un programme C avec la fonction inverse, le compiler et l'utiliser sur `encrypted.txt` pour déchiffrer le message.
 <details><summary>Solution</summary>
 	
-```cpp
+```c
 #include <stdio.h>
 
 #define KEY 0xABCD1234 // Clé XOR pour le chiffrement
@@ -211,7 +211,7 @@ int main() {
 ```
 
 A titre d'information, voici le code source de `totally_normal_binary`
-```cpp
+```c
 #include <stdio.h>
 
 #define KEY 0xABCD1234 // Clé XOR pour le chiffrement
