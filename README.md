@@ -100,16 +100,49 @@ Cliquez ensuite sur la tête d'hydre verte (CodeBrowser) dans le Tool Chest. Une
 
 Glissez-déposez l'exécutable `INSA_entry_test` sur cette fenêtre. Dans les pop-up successives, cliquez sur OK > Yes > Analyze > OK sans modifier les paramètres affichés. Vous allez maintenant pouvoir parcourir le code décompilé.
 
-// image d'illustration
-
 La fenêtre est subdivisée en plusieurs parties (cf. partie précédente sur Ghidra). A gauche, vous trouverez notamment le Symbol Tree. Ouvrez le dossier 'Functions' et double-cliquez sur 'main' pour trouver le point d'entrée de votre programme. Ghidra affiche dans la partie à droite le code reconstitué à partir de la décompilation.
 
-<details><summary>Indice 1</summary>
-Suite du walkthrough
+<details><summary>Indice 1 (mot de passe 1)</summary>
+
+Repérez la fonction qui compare la valeur entrée au mot de passe attendu.
 </details>
 
-<details><summary>Indice 2</summary>
-Suite du walkthrough
+<details><summary>Indice 2 (mot de passe 2)</summary>
+
+La fonction qui vérifie le mot de passe le fait par rapport à une variable qui a subi un pré-traitement via la fonction `rv`. Double-cliquez sur cette fonction pour comprendre ce qu'elle fait. L'un de ses arguments est le mot de passe attendu. Revenez au code décompilé de la fonction `test` et double-cliquez sur la variable passée pour cet argument.
+</details>
+
+<details><summary>Indice 3 (mot de passe 2)</summary>
+
+Il s'agit de la variable `r`. Une fois que vous avez double-cliqué dessus, vous pouvez voir dans la fenêtre de Listing que son type est indéfini. Comme expliqué plus haut dans les manipulations utiles, faites un clic droit et spécifiez un type approprié via Data.
+	Si vous avez spécifié le bon type et que vous avez compris la fonction `rv`, vous devriez pouvoir trouver la solution !
+</details>
+
+<details><summary>Indice 4 (mot de passe 3)</summary>
+
+De la même façon que précédemment, une fonction (`xr`) pré-traite une variable qui est ensuite comparée au mot de passe entré. Identifiez ce que fait cette fonction. Identifiez la variable, passée en argument de cette fonction dans `test`, qui représente le mot de passe attendu.
+</details>
+
+<details><summary>Indice 5 (mot de passe 3)</summary>
+
+La fonction `xr` est un XOR. Il s'agit d'une opération bit à bit. Vous pouvez utiliser ce site [CodeChef](https://cyberchef.org/#recipe=From_Hex('Space')XOR(%7B'option':'Hex','string':''%7D,'Standard',false)) pour faire l'opération entre les bytes que vous voyez dans le listing représentant `x` et la clé, que vous trouverez dans test.
+</details>
+
+<details><summary>Solution mot de passe 1</summary>
+
+INSA{YodelingYogurt}
+</details>
+
+<details><summary>Solution mot de passe 2</summary>
+
+INSA{ZigzaggingZucchini}
+</details>
+
+<details><summary>Solution mot de passe 3</summary>
+
+INSA{GigglingGingerbread}
+
+[Recette CodeChef](https://cyberchef.org/#recipe=From_Hex('Space')XOR(%7B'option':'Hex','string':'0x42'%7D,'Standard',false)&input=MGIgMGMgMTEgMDMgMzkgMDUgMmIgMjUgMjUgMmUgMmIgMmMgMjUgMDUgMmIgMmMgMjUgMjcgMzAgMjAgMzAgMjcgMjMgMjYgM2Y)
 </details>
 
 
