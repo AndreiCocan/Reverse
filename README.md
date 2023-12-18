@@ -294,7 +294,9 @@ Il est possible d'accéder à des zones du code qui ne sont normalement pas poss
 
 <details><summary>Solution</summary>
 
-Mettez des points d'arrêts au niveau de `if (flag2)` et `if(flag)`, exécutez le programme normalement et changez la valeur de `flag2` et `flag` a `true` lors de l’exécution. Continuez l’exécution normale du programme. Notez que l’on peut aussi voir le mot-de-passe (variable `n`) lors de l’exécution. 
+Mettez des points d'arrêts au niveau de `if (flag2)` et `if(flag)`, exécutez le programme normalement et changez la valeur de `flag2` et `flag` a `true` lors de l’exécution. Continuez l’exécution normale du programme.
+
+ Notez que l’on peut aussi voir le mot-de-passe (variable `n`) lors de l’exécution. 
 
 Pour info, les strings et le mot-de-passe ont été inclus sous la forme d’un fichier chiffré directement dans l’exécutable. Cela aurait rendu l’analyse statique vraiment difficile en analyse statique, d'où l'utilité de la méthode dynamique.
 
