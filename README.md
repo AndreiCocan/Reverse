@@ -67,6 +67,15 @@ Si vous cliquez sur une fonction comme « main », la fenêtre `Decompile` est m
 
 </details>
 
+### Manipulations utiles
+
+Comme les noms des variables sont générés par ghidra, ils ne facilitent pas forcément la compréhension du code. Pour palier à ce problème, il est possible d'éditer le nom de ces variables en faisant Clique Droit > Rename Variable. 
+
+![image info](images/renamevar.png)
+
+Aussi, il se peut que ghidra n’arrive pas à correctement identifier le type de certaines données ou que vous vouliez changer comment ghidra les affiche (ex voir un String sous la forme de byte). Pour ce faire, utilisez Clique Droit > Data > type sur la donnée.
+
+![image info](images/changetype.png)
 
 ## Exercices
 Sur la VM Kali, vous trouverez sur le bureau un dossier `Reversing` et 2 sous-dossiers, un par exercice.
