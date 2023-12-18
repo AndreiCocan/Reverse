@@ -2,7 +2,7 @@
 
 ## Installation
 
-### Avec la VM
+### Avec la Machine Virtuelle
 #### Installez VirtualBox
 
 https://www.virtualbox.org/wiki/Downloads
@@ -15,11 +15,11 @@ Puis si vous êtes sur Linux :
 - VM Windows (exo 3) : ~2.6 Go au téléchargement, 
 
 #### Ouvrez l'application VirtualBox.
-- cliquez sur 'Importer'
-- dans le champ 'Fichier', sélectionnez l'archive de la VM qui vous intéresse selon l'exercice auquel vous êtes rendus (Kali pour les exercices 1 et 2, Windows pour l'exercice 3)
-- cliquez sur 'Suivant' > 'Finir' (garder les paramètres par défaut proposés)
-- après l'importation, la VM doit apparaître dans la liste de VirtualBox. Double-cliquez dessus pour la démarrer.
-- login / mdp : 
+- Cliquez sur 'Importer'
+- Dans le champ 'Fichier', sélectionnez l'archive de la VM qui vous intéresse selon l'exercice auquel vous êtes rendus (Kali pour les exercices 1 et 2, Windows pour l'exercice 3)
+- Cliquez sur 'Suivant' > 'Finir' (garder les paramètres par défaut proposés)
+- Après l'importation, la VM doit apparaître dans la liste de VirtualBox. Double-cliquez dessus pour la démarrer.
+- Login / mdp : 
 	- VM Kali : kali / kali
 	- VM Windows : win / win
 
@@ -27,7 +27,7 @@ Puis si vous êtes sur Linux :
 Si vous ne souhaitez pas utiliser la VM, vous aurez besoin pour les exercices 1 et 2 de :
 - Ghidra : https://github.com/NationalSecurityAgency/ghidra
 - gcc
-- un IDE
+- un IDE, comme par exemple Visual Studio Code
 
 Pour l'exercice 3 :
 - Windows
@@ -85,7 +85,7 @@ Sur la VM Kali, vous trouverez sur le bureau un dossier `Reversing` et 2 sous-do
 
 ### Exercice 1
 
-Dans le dossier `1`, vous trouverez l'exécutable d'un programme `INSA_entry_test`. Vous pouvez l'exécuter dans un terminal. Le but de l'exercice est de passer les trois épreuves (récupérer 3 mots de passe).
+Dans le dossier `1`, vous trouverez l'exécutable d'un programme `INSA_entry_test`. Vous pouvez l'exécuter dans un terminal. Le but de l'exercice est de passer les trois épreuves de l'exercice, c'est-à-dire de récupérer 3 mots de passe.
 
 **Puisque l'exécutable vérifie les mots de passe que vous entrez, vous allez décompiler son code avec Ghidra, et essayer de retrouver les mots de passe dans le code décompilé.**
 
