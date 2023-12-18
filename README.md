@@ -125,7 +125,12 @@ De la même façon que précédemment, une fonction (`xr`) pré-traite une varia
 
 <details><summary>Indice 5 (mot de passe 3)</summary>
 
-La fonction `xr` est un XOR. Il s'agit d'une opération bit à bit. Vous pouvez utiliser ce site [CodeChef](https://cyberchef.org/#recipe=From_Hex('Space')XOR(%7B'option':'Hex','string':''%7D,'Standard',false)) pour faire l'opération entre les bytes que vous voyez dans le listing représentant `x` et la clé, que vous trouverez dans test.
+La fonction `xr` est un XOR. Il s'agit d'une opération bit à bit. Vous pouvez utiliser ce site [CyberChef](https://cyberchef.org/) pour faire les opération s entre les bytes que vous voyez dans le listing représentant `x` et la clé, que vous trouverez dans test. Attention, dans le listing, les bytes sont representés en hexdecimal, il convient de les transformer en byte 'brut' (raw bytes) au préalable avec `From Hex` si vous utilisez CyberChef.
+</details>
+
+<details><summary>Indice 6 (mot de passe 3)</summary>
+
+Voici la [recette CyberChef](https://cyberchef.org/#recipe=From_Hex('Space')XOR(%7B'option':'Hex','string':''%7D,'Standard',false)) utilisée pour la transformation.
 </details>
 
 <details><summary>Solution mot de passe 1</summary>
@@ -141,8 +146,7 @@ INSA{ZigzaggingZucchini}
 <details><summary>Solution mot de passe 3</summary>
 
 INSA{GigglingGingerbread}
-
-[Recette CodeChef](https://cyberchef.org/#recipe=From_Hex('Space')XOR(%7B'option':'Hex','string':'0x42'%7D,'Standard',false)&input=MGIgMGMgMTEgMDMgMzkgMDUgMmIgMjUgMjUgMmUgMmIgMmMgMjUgMDUgMmIgMmMgMjUgMjcgMzAgMjAgMzAgMjcgMjMgMjYgM2Y)
+[Recette CyberChef complète](https://cyberchef.org/#recipe=From_Hex('Space')XOR(%7B'option':'Hex','string':'0x42'%7D,'Standard',false)&input=MGIgMGMgMTEgMDMgMzkgMDUgMmIgMjUgMjUgMmUgMmIgMmMgMjUgMDUgMmIgMmMgMjUgMjcgMzAgMjAgMzAgMjcgMjMgMjYgM2Y) .
 </details>
 
 
@@ -264,18 +268,28 @@ int main() {
 
 Eteignez maintenant la VM Kali en fermant la fenêtre et lancez la VM Windows. Vous trouverez sur le bureau un dossier `dnSpy` et le dossier `Reverse`. Ouvrez `dnSpy` et lancez l'exécutable. Ouvrez `Reverse`, vous y trouverez un exécutable `UltimateVault`. Glissez-déposez `UltimateVault` sur la fenêtre de dnSpy. 
 
-Dans cet exercice, de la même façon qu'avec Ghidra, vous pourrez parcourir le code décompilé, mais aussi utiliser un debugger pour marquer des points d'arrêts.
+Pour voir les différentes classes du code décompilé, referez-vous à `l'Assembly Explorer` (voir ci-dessous pour les classes a, c, r, s)
 
-// image d'illustration
+![image info](images/dnspyAssemblyExplorer.png)
+
+Dans cet exercice, de la même façon qu'avec Ghidra, vous pourrez parcourir le code décompilé, mais aussi utiliser un debugger pour marquer des points d'arrêts pour faire de l'analyse dynamique (Flèche verte Start).
+
+![image info](images/dnspy.png)
 
 <details><summary>Indice 1</summary>
-Suite du walkthrough
+ 
+ Tout se passe dans la classe `s`.
 </details>
 
 <details><summary>Indice 2</summary>
-Suite du walkthrough
+
+Il est possible d'éditer certaines valeurs lors de l'exécution avec le debugger.
 </details>
 
+<details><summary>Solution</summary>
+
+
+</details>
 
 ## Conclusion
 
