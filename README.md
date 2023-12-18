@@ -158,7 +158,7 @@ Pour déchiffrer le message, vous allez décompiler le malware afin de comprendr
 
 Dans Ghidra, de la même façon que précédemment, glissez-déposez l'exécutable `totally_normal_binary` et analysez-le pour pouvoir parcourir le code décompilé. Trouvez la fonction 'main'.
 
-Dans cette fonction, vous devriez pouvoir identifier une fonction qui vous intéresse... Double-cliquez dessus pour afficher son code reconstitué. Tentez de comprendre la fonction pour trouver sa fonction inverse.
+Dans cette fonction, vous devriez pouvoir identifier une fonction qui vous intéresse... Double-cliquez dessus pour afficher son code reconstitué. **Tentez de comprendre la fonction pour trouver sa fonction inverse.**
 
 Vous n'aurez plus qu'à coder un programme C avec la fonction inverse, le compiler et l'utiliser sur `encrypted.txt` pour déchiffrer le message.
 <details><summary>Solution</summary>
@@ -275,6 +275,8 @@ Pour voir les différentes classes du code décompilé, referez-vous à `l'Assem
 Dans cet exercice, de la même façon qu'avec Ghidra, vous pourrez parcourir le code décompilé, mais aussi utiliser un debugger pour marquer des points d'arrêts pour faire de l'analyse dynamique (Flèche verte Start).
 
 ![image info](images/dnspy.png)
+
+**Le but ici est d'exécuter une partie du code qui n'est normalement pas accessible (et donc de découvrir le secret que cache le coffre)**
 
 
 <details><summary>Indice 1</summary>
