@@ -11,11 +11,14 @@ Puis si vous êtes sur Linux :
 `sudo dpkg -i <paquet>.deb`
 
 #### Téléchargez ensuite les VM : // lien
-- VM Kali (exos 1 et 2) : ~3 Go au téléchargement, 8 une fois déployée
-- VM Windows (exo 3) : 
+- VM Kali (exos 1 et 2) : ~3.1 Go au téléchargement, 8 Go une fois déployée
+- VM Windows (exo 3) : ~2.6 Go au téléchargement, 
 
 #### Ouvrez l'application VirtualBox.
-- importer l'archive de la VM qui vous intéresse selon l'exercice auquel vous êtes rendus
+- cliquez sur 'Importer'
+- dans le champ 'Fichier', sélectionnez l'archive de la VM qui vous intéresse selon l'exercice auquel vous êtes rendus (Kali pour les exercices 1 et 2, Windows pour l'exercice 3)
+- cliquez sur 'Suivant' > 'Finir' (garder les paramètres par défaut proposés)
+- après l'importation, la VM doit apparaître dans la liste de VirtualBox. Double-cliquez dessus pour la démarrer.
 - login / mdp : 
 	- VM Kali : kali / kali
 	- VM Windows : win / win
@@ -73,7 +76,7 @@ Sur la VM Kali, vous trouverez sur le bureau un dossier `Reversing` et 2 sous-do
 
 ### Exercice 1
 
-Dans le dossier `1`, vous trouverez l'exécutable d'un programme `INSA_entry_test`. Vous pouvez l'exécuter dans un terminal. Le but de l'exercise est de passer les trois épreuves (récupérer 3 mots de passe).
+Dans le dossier `1`, vous trouverez l'exécutable d'un programme `INSA_entry_test`. Vous pouvez l'exécuter dans un terminal. Le but de l'exercice est de passer les trois épreuves (récupérer 3 mots de passe).
 
 **Puisque l'exécutable vérifie les mots de passe que vous entrez, vous allez décompiler son code avec Ghidra, et essayer de retrouver les mots de passe dans le code décompilé.**
 
@@ -86,11 +89,11 @@ ghidra
 Dans la fenêtre qui s'ouvre, faites File > New project. Sélectionnez 'Non-shared project' puis 'Next'. Choisissez ensuite le répertoire où vous créez votre projet Ghidra, où vous le souhaitez, avec le nom que vous voulez.
 Cliquez ensuite sur la tête d'hydre verte (CodeBrowser) dans le Tool Chest. Une nouvelle fenêtre va s'ouvrir.
 
-Glissez-déposez l'exécutable sur cette fenêtre. Dans les pop-up successives, cliquez sur OK > Yes > Analyze > OK sans modifier les paramètres affichés. Vous allez maintenant pouvoir parcourir le code décompilé.
+Glissez-déposez l'exécutable `INSA_entry_test` sur cette fenêtre. Dans les pop-up successives, cliquez sur OK > Yes > Analyze > OK sans modifier les paramètres affichés. Vous allez maintenant pouvoir parcourir le code décompilé.
 
 // image d'illustration
 
-La fenêtre est subdivisée en plusieurs parties. Au milieu vous trouverez l'assembleur de l'exécutable. A gauche, vous trouverez notamment le Symbol Tree. Ouvrez le dossier 'Functions' et double-cliquez sur 'main' pour trouver le point d'entrée de votre programme. Ghidra affiche dans la partie à droite le code reconstitué à partir de la décompilation (cela vous évitera de lire de l'assembleur).
+La fenêtre est subdivisée en plusieurs parties (cf. partie précédente sur Ghidra). A gauche, vous trouverez notamment le Symbol Tree. Ouvrez le dossier 'Functions' et double-cliquez sur 'main' pour trouver le point d'entrée de votre programme. Ghidra affiche dans la partie à droite le code reconstitué à partir de la décompilation.
 
 <details><summary>Indice 1</summary>
 Suite du walkthrough
@@ -143,6 +146,8 @@ Suite du walkthrough
 
 Félicitations ! Vous êtes un agent émérite de l'I.N.S.A.
 
-Pour retrouver votre espace de stockage libre initial, faites un clic droit sur les VM dans VirtualBox puis 'Supprimer'.
-Supprimez également les archives des VM là où vous les aviez enregistrées.
+Pour retrouver votre espace de stockage libre initial, faites un clic droit sur les VM dans VirtualBox puis 'Supprimer' > 'Supprimer tous les fichiers'.
+
+Supprimez également les archives (OVA) des VM là où vous les aviez enregistrées.
+
 Désinstallez ensuite VirtualBox si vous le souhaitez.
