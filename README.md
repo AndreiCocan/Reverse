@@ -125,7 +125,7 @@ De la même façon que précédemment, une fonction (`xr`) pré-traite une varia
 
 <details><summary>Indice 5 (mot de passe 3)</summary>
 
-La fonction `xr` est un XOR. Il s'agit d'une opération bit à bit. Vous pouvez utiliser ce site [CyberChef](https://cyberchef.org/) pour faire les opération s entre les bytes que vous voyez dans le listing représentant `x` et la clé, que vous trouverez dans test. Attention, dans le listing, les bytes sont representés en hexdecimal, il convient de les transformer en byte 'brut' (raw bytes) au préalable avec `From Hex` si vous utilisez CyberChef.
+La fonction `xr` est un XOR. Il s'agit d'une opération bit à bit. Vous pouvez utiliser ce site [CyberChef](https://cyberchef.org/) pour faire les opérations entre les bytes que vous voyez dans le listing représentant `x` et la clé, que vous trouverez dans test. Attention, dans le listing, les bytes sont représentés en hexadécimal, il convient de les transformer en byte 'brut' (raw bytes) au préalable avec `From Hex` si vous utilisez CyberChef.
 </details>
 
 <details><summary>Indice 6 (mot de passe 3)</summary>
@@ -276,20 +276,32 @@ Dans cet exercice, de la même façon qu'avec Ghidra, vous pourrez parcourir le 
 
 ![image info](images/dnspy.png)
 
+
 <details><summary>Indice 1</summary>
- 
- Tout se passe dans la classe `s`.
+
+Ne chercher que dans la classe `s`.
 </details>
 
 <details><summary>Indice 2</summary>
 
-Il est possible d'éditer certaines valeurs lors de l'exécution avec le debugger.
+Il est possible d'éditer (ou voir) les valeurs des variables lors de l'exécution avec le debugger.
+</details>
+
+<details><summary>Indice 3</summary>
+
+Il est possible d'accéder à des zones du code qui ne sont normalement pas possibles d’accès.
 </details>
 
 <details><summary>Solution</summary>
 
+Mettez des points d'arrêts au niveau de `if (flag2)` et `if(flag)`, exécutez le programme normalement et changez la valeur de `flag2` et `flag` a `true` lors de l’exécution. Continuez l’exécution normale du programme. Notez que l’on peut aussi voir le mot-de-passe (variable `n`) lors de l’exécution. 
+
+Pour info, les strings et le mot-de-passe ont été inclus sous la forme d’un fichier chiffré directement dans l’exécutable. Cela aurait rendu l’analyse statique vraiment difficile en analyse statique, d'où l'utilité de la méthode dynamique.
+
 
 </details>
+
+
 
 ## Conclusion
 
