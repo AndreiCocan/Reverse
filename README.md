@@ -117,20 +117,113 @@ Suite du walkthrough
 
 Dans le dossier `2`, vous trouverez l'exécutable du 'malware' `totally_normal_binary` qui a chiffré un message que vous aviez reçu et n'avez pas eu le temps de lire, `encrypted.txt` (pour plus de détails sur le lore, lisez le `README.md` présent dans le dossier).
 
-Pour déchiffrer le message, vous pourriez essayer de décompiler le malware afin de comprendre sa fonction de chiffrement. La fonction de déchiffrement sera la fonction inverse.
+Pour déchiffrer le message, vous allez décompiler le malware afin de comprendre sa fonction de chiffrement. La fonction de déchiffrement sera la fonction inverse.
 
 Dans Ghidra, de la même façon que précédemment, glissez-déposez l'exécutable `totally_normal_binary` et analysez-le pour pouvoir parcourir le code décompilé. Trouvez la fonction 'main'.
 
 Dans cette fonction, vous devriez pouvoir identifier une fonction qui vous intéresse... Double-cliquez dessus pour afficher son code reconstitué. Tentez de comprendre la fonction pour trouver sa fonction inverse.
 
 Vous n'aurez plus qu'à coder un programme C avec la fonction inverse, le compiler et l'utiliser sur `encrypted.txt` pour déchiffrer le message.
+<details><summary>Solution</summary>
+	
+```cpp
+#include <stdio.h>
 
-<details><summary>Indice 1</summary>
-Suite du walkthrough
-</details>
+#define KEY 0xABCD1234 // Clé XOR pour le chiffrement
+#define SUB_BASE 3 // Valeur de base pour la soustraction
 
-<details><summary>Indice 2</summary>
-Suite du walkthrough
+void decryptFile(const char *inputFile, const char *outputFile) {
+    FILE *input = fopen(inputFile, "r");
+    FILE *output = fopen(outputFile, "w");
+
+    if (input == NULL || output == NULL) {
+        perror("Error when opening files");
+        return;
+    }
+
+    int c;
+    int sub = 1;
+    int counter = 0;
+    while ((c = fgetc(input)) != EOF) {
+        // Déchiffrement
+        c = c - sub;
+        c = c ^ KEY;
+
+        fputc(c, output);
+
+        // Variation périodique de la soustraction basée sur le counter
+        sub = (SUB_BASE + (counter % 10)) % 21;
+        counter++;
+    }
+
+    fclose(input);
+    fclose(output);
+}
+
+
+int main() {
+    const char *encryptedFile = "./encrypted.txt";
+    const char *decryptedFile = "./decrypted.txt";
+
+    // Déchiffrement
+    decryptFile(encryptedFile, decryptedFile);
+    printf("Successful decryption.\n");
+
+    return 0;
+}
+```
+
+A titre d'information, voici le code source de `totally_normal_binary`
+```cpp
+#include <stdio.h>
+
+#define KEY 0xABCD1234 // Clé XOR pour le chiffrement
+#define ADD_BASE 3 // Valeur de base pour l'addition
+
+void encryptFile(const char *inputFile, const char *outputFile) {
+    FILE *input = fopen(inputFile, "r");
+    FILE *output = fopen(outputFile, "w");
+
+    if (input == NULL || output == NULL) {
+        perror("Error when opening files");
+        return;
+    }
+
+    int c;
+    int add = 1;
+    int counter = 0;
+    while ((c = fgetc(input)) != EOF) {
+        // Chiffrement : XOR avec la clé et addition
+        c = c ^ KEY;
+        c = c + add;
+
+        fputc(c, output);
+
+        // Variation périodique de l'addition basée sur le counter
+        add = (ADD_BASE + (counter % 10)) % 21;
+        counter++;
+    }
+
+    fclose(input);
+    fclose(output);
+}
+
+int main() {
+    const char *inputFile = "./original_file.txt";
+    const char *encryptedFile = "./encrypted.txt";
+
+    encryptFile(inputFile, encryptedFile);
+    printf("Successful encryption.\n");
+
+    if(remove(inputFile) == 0) {
+        printf("Original file successfully deteleted.\n");
+    } else {
+        printf("Unable to delete the original file.\n");
+    }
+
+    return 0;
+}
+```
 </details>
 
 
