@@ -32,6 +32,42 @@ Pour l'exercice 3 :
 
 Nous fournirons le contenu des exercices si vous êtes dans ce cas. C'est particulièrement pour éviter l'installation pénible de Ghidra que la VM est fournie, et pour que tout le monde dispose du même environnement.
 
+## Ghidra
+
+<details><summary>Fenêtres principales de Ghidra</summary>
+
+#### Program Trees
+Dans le coin supérieur gauche, une fenêtre présente les sections du programme : il s’agit de la section `Program Trees`. Si vous avez déjà utilisé un outil comme PeStudio, cela devrait vous sembler familier.
+
+![image info](images/pt.png)
+
+#### Symbol Tree
+La section `Symbol Tree` est très utile : elle contient les importations, les exportations et les fonctions que le programme utilise pour exécuter ses activités malveillantes.
+
+![image info](images/st.png)
+
+Lorsque Ghidra importe et analyse le programme, il tente d’attribuer un nom à certaines fonctions sur la base de l’analyse automatisée qu’il a effectuée. Dans l’image ci-dessus, l’une des fonctions est nommée « main ». 
+
+**Si vous double-cliquez dessus, la fenêtre « Listing » principale de Ghidra est actualisée et affiche le code d’assembleur de la fonction main**
+
+Nous pouvons également voir que certaines fonctions suivent une convention de dénomination générique qui commence par le préfixe « FUN_ », suivi d’une série de chiffres. Il s’agit de fonctions qui n’ont pas été définies par Ghidra et qui sont nommées « FUN_ » pour « function ». On leur attribue une valeur numérique hexadécimale qui représente l’emplacement de la fonction dans le code binaire.
+
+
+#### Listing
+La partie centrale de Ghidra (`Listing`) represente le code assembleur resultant au désassemblage du binaire du programme.
+
+![image info](images/listing.png)
+
+
+#### Decompile
+
+Si vous cliquez sur une fonction comme « main », la fenêtre `Decompile` est mise à jour et contient maintenant des données. Cette fenêtre indique où Ghidra a tenté de convertir le code d’assemblage de la fenêtre « Listing » en C. L’analyste peut ainsi voir à quoi ressemblait le code de l’auteur.
+
+![image info](images/decom.png)
+
+</details>
+
+
 ## Exercices
 Sur la VM Kali, vous trouverez sur le bureau un dossier `Reversing` et 2 sous-dossiers, un par exercice.
 
