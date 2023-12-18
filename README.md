@@ -76,7 +76,7 @@ Comme les noms des variables sont générés par ghidra, ils ne facilitent pas f
 
 ![image info](images/renamevar.png)
 
-Aussi, il se peut que ghidra n’arrive pas à correctement identifier le type de certaines données ou que vous vouliez changer comment ghidra les affiche (ex voir un String sous la forme de byte). Pour ce faire, utilisez Clique Droit > Data > type sur la donnée.
+Aussi, il se peut que ghidra n’arrive pas à correctement identifier le type de certaines données ou que vous vouliez changer comment ghidra les affiche (ex voir un String sous la forme de Bytes). Pour ce faire, utilisez Clique Droit > Data > type sur la donnée.
 
 ![image info](images/changetype.png)
 
