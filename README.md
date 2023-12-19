@@ -10,7 +10,8 @@ https://www.virtualbox.org/wiki/Downloads
 Puis si vous êtes sur Linux :
 `sudo dpkg -i <paquet>.deb`
 
-#### Téléchargez ensuite les VM : https://drive.google.com/drive/folders/1rIgegKYgVW6upfamIXiEiAXA795aalsc?usp=sharing
+#### Téléchargez ensuite les VM : 
+https://drive.google.com/drive/folders/1rIgegKYgVW6upfamIXiEiAXA795aalsc?usp=sharing
 - VM Kali (exos 1 et 2) : ~3.1 Go au téléchargement, 8 Go une fois déployée
 - VM Windows (exo 3) : ~2.6 Go au téléchargement, 
 
