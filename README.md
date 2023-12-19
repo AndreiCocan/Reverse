@@ -13,7 +13,7 @@ Puis si vous êtes sur Linux :
 #### Téléchargez ensuite les VM : 
 https://drive.google.com/drive/folders/1rIgegKYgVW6upfamIXiEiAXA795aalsc?usp=sharing
 - VM Kali (exos 1 et 2) : ~3.1 Go au téléchargement, 8 Go une fois déployée
-- VM Windows (exo 3) : ~2.6 Go au téléchargement, 
+- VM Windows (exo 3) : ~2.6 Go au téléchargement 
 
 #### Ouvrez l'application VirtualBox.
 - Cliquez sur 'Importer'
